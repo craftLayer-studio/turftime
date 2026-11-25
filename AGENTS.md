@@ -5,7 +5,7 @@ Brief for AI agents working on TurfTime docs, specs or code. Read this first.
 ## Context
 
 - **Product:** TurfTime, vertical SaaS for sports turfs, box cricket, football 5s/7s, badminton/pickleball/padel courts and gaming cafes.
-- **Portfolio:** CraftLayer. Shared platform lives in [`core/`](../core/README.md). Reference core modules; do not re-specify them.
+- **Portfolio:** CraftLayer. Shared platform lives in [`core/`](https://github.com/craftLayer-studio/craftlayer-core/blob/main/README.md). Reference core modules; do not re-specify them.
 - **Market:** India first (Tier 1–3 cities), global-ready later. Prices in INR with USD equivalents.
 - **Wedge:** QR at the venue plus a shareable link (Instagram bio, WhatsApp groups) opens the venue's own booking page. Players pick a slot, pay an advance by UPI, and get a WhatsApp confirmation. Zero commission.
 - **Business goal:** Earn money fast. MVP sellable in 6–8 weeks; first 10 paying venues within 45 days of MVP.
@@ -50,7 +50,7 @@ Brief for AI agents working on TurfTime docs, specs or code. Read this first.
 
 ## Core modules used
 
-QR engine, public storefront (venue booking page), booking engine (slots, holds, packs), payments (advance, split, refunds), customer CRM, WhatsApp messaging, loyalty and rewards (packs, referral credit), reviews and Google review funnel, staff app, analytics, onboarding wizard. See [core/](../core/README.md).
+QR engine, public storefront (venue booking page), booking engine (slots, holds, packs), payments (advance, split, refunds), customer CRM, WhatsApp messaging, loyalty and rewards (packs, referral credit), reviews and Google review funnel, staff app, analytics, onboarding wizard. See [core/](https://github.com/craftLayer-studio/craftlayer-core/blob/main/README.md).
 
 ## Open questions
 
