@@ -1,0 +1,9 @@
+.heat0 { background: var(--color-background-muted); }
+.heat1 { background: color-mix(in srgb, var(--color-accent) 15%, var(--color-background-card)); }
+.heat2 { background: color-mix(in srgb, var(--color-accent) 35%, var(--color-background-card)); }
+.heat3 { background: color-mix(in srgb, var(--color-accent) 55%, var(--color-background-card)); }
+.heat4 { background: color-mix(in srgb, var(--color-accent) 75%, var(--color-background-card)); color: var(--color-on-accent); }
+.heat5 { background: var(--color-accent); color: var(--color-on-accent); }
+.heatNone { background: transparent; }
+.cell { border-radius: var(--radius-inner); min-width: calc(var(--spacing-4) * 2.5); }
+.qr { width: 100%; max-width: calc(var(--spacing-12) * 6); height: auto; }
