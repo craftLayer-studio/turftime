@@ -62,6 +62,8 @@ Turf owners juggle phone calls, WhatsApp messages and marketplace bookings in a 
 
 ### MVP (weeks 1–8, sellable)
 
+Build status (2026-11-26): T1 to T9 are built in the MVP app with demo data and simulated payments and messaging. T10 (split payment) and T11 (fill offers, sent by the owner) are also built. See the README for details.
+
 | ID | Feature | P | Metric moved | Core module |
 |---|---|---|---|---|
 | T1 | Venue setup wizard: resources, opening hours, slot length, price rules | P0 | Activation | Onboarding wizard |

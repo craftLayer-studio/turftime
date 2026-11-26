@@ -48,6 +48,54 @@ Annual billing: 2 months free. Prices exclude 18% GST. USD at ₹88 = $1 (estima
 - **Built for Indian group payments.** Split UPI payment among 6–14 players is a real pain no marketplace solves well.
 - **Works with marketplaces, not against them.** Keep Playo/Hudle for discovery; move repeat players to your own link.
 
+## Status
+
+**MVP, demo data, simulated messaging and payments.** Live site (planned): https://turftime.craftlayer.store. Support: turftime@craftlayer.store.
+
+## How to run
+
+Needs Node 20.9+ and pnpm 11.
+
+```bash
+pnpm install
+pnpm dev                      # http://localhost:3000, creates and seeds ./.data/pglite on first request
+# or a production build on port 3131:
+pnpm build && APP_URL=http://localhost:3131 pnpm start -p 3131
+```
+
+Copy `.env.example` to `.env.local` to set `APP_URL` (QR codes and share links), `SESSION_SECRET` and optionally `DATABASE_URL` (real Postgres instead of PGlite). `pnpm db:seed --reset` restores the demo data.
+
+Checks: `pnpm typecheck && pnpm lint && pnpm test && pnpm build`, plus `pnpm exec astryx doctor --built .`.
+
+## Demo walkthrough
+
+The demo venue is fictional: **TurfTime Demo Arena**, Pune, with four courts (box cricket, football 5s, badminton, pickleball) and four weeks of sample bookings. Every page that shows it is labelled Demo.
+
+1. Open `/demo`. It links to the venue's public booking page `/b/<token>` (the URL its QR code opens).
+2. As a player: pick a date, court and slot (peak, off-peak and weekend prices show on each slot), enter name and mobile, tick the optional WhatsApp consents, optionally split among players, then **Hold slot**. The slot is held for 7 minutes (30 for split pay).
+3. On `/p/<token>` pay the advance through the simulated gateway or the UPI intent link. With split pay, each friend opens the same link and pays their share; the slot confirms when the advance is covered. Cancelling refunds by policy.
+4. Sign in at `/login` as staff (+91 90000 00002) or owner (+91 90000 00001). The OTP is shown on screen as a demo.
+5. Staff desk `/staff`: one calendar for online, phone, walk-in and marketplace bookings. Tap an open slot to book a walk-in or block a marketplace booking; tap a booking to collect the balance, mark played or no-show, or cancel.
+6. Owner: `/owner` dashboard (utilisation heatmap, revenue, advance vs balance, no-shows, fill-offer revenue), `/owner/players` (repeat-player CRM with consent), `/owner/offers` (send empty-slot offers to opted-in players), `/owner/messages` (WhatsApp outbox, simulated), `/owner/settings` (advance, hold time, UPI ID, courts, price rules, demo reset), `/owner/qr` (printable QR sheet).
+
+## Built vs planned
+
+| Feature | Status |
+|---|---|
+| T1 Venue setup: courts, hours, price rules (settings page; no guided wizard yet) | Built |
+| T2 Public booking page via QR/link, live slot grid | Built (no player OTP: phone is captured with consent) |
+| T3 Slot holds, atomic confirmation, single calendar, DB-level no double booking (tested with 20 concurrent holds) | Built |
+| T4 Advance payment (simulated gateway + UPI intent), balance logging, refunds by policy | Built (simulated) |
+| T5 Staff desk: walk-in/phone booking, marketplace blocks, day view | Built |
+| T6 Peak, off-peak, weekend, holiday pricing | Built |
+| T7 WhatsApp confirmation, reminder, cancellation | Built (simulated outbox + wa.me links) |
+| T8 Player CRM with consent, visits, spend, tags | Built |
+| T9 Owner dashboard: utilisation heatmap, revenue, advance vs balance, no-shows | Built |
+| T10 Split payment among players | Built |
+| T11 Empty-slot fill offers | Built (owner sends; no automatic 10 am job yet) |
+| T12 to T22 (recurring bookings, packs, reviews, referrals, waitlist, tournaments, gaming cafe mode, multi-venue, marketplace sync) | Planned |
+| Real Razorpay, WhatsApp Business API, SMS OTP | Planned (adapters are in place) |
+
 ## Documents
 
 - [AGENTS.md](AGENTS.md): brief for AI agents
