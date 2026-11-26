@@ -1,0 +1,46 @@
+{
+  "name": "turftime",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Zero-commission booking for sports turfs, box cricket and badminton/pickleball courts in India. MVP with demo data.",
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run",
+    "db:generate": "drizzle-kit generate",
+    "db:seed": "tsx src/server/db/seed-cli.ts"
+  },
+  "dependencies": {
+    "@astryxdesign/core": "0.7.17",
+    "@astryxdesign/theme-matcha": "0.7.17",
+    "@electric-sql/pglite": "0.6.0",
+    "@stylexjs/stylex": "0.19.1",
+    "drizzle-orm": "0.45.4",
+    "next": "16.4.6",
+    "pg": "8.23.1",
+    "qrcode": "1.5.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@astryxdesign/cli": "0.7.17",
+    "@types/node": "20.19.43",
+    "@types/pg": "8.23.1",
+    "@types/qrcode": "1.5.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "drizzle-kit": "0.31.11",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.6",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "5.1.1"
+  },
+  "packageManager": "pnpm@11.28.6",
+  "engines": {
+    "node": ">=20.9"
+  }
+}

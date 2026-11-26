@@ -1,4 +1,29 @@
-.DS_Store
-node_modules/
+# dependencies
+/node_modules
+.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+/build
+next-env.d.ts
+*.tsbuildinfo
+
+# local data (PGlite dev database)
+/.data/
+
+# testing
+/coverage
+
+# env files (only the example is committed)
 .env*
+!.env.example
+
+# misc
+.DS_Store
+*.pem
 *.log
+npm-debug.log*
+.pnpm-debug.log*
+.vercel
